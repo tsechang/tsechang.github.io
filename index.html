@@ -7,9 +7,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="imags/favicon.ico">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic"
-
-          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic"
+      rel="stylesheet" type="text/css">
     <style>
       body {
         font-family: 'Arial';
@@ -99,30 +98,196 @@
         margin-left: auto;
         margin-right: auto;
       }
+
+      /* Horizontal Navigation Bar */      
+
+      #ul_nav_bar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 45px;
+      }
+
+      #il_nav_bar {
+        float: left;
+      }
+
+      #il_nav_bar a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 12px 60px;
+        text-decoration: none;
+      }
+
+      #il_nav_bar a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      .active {
+        background-color: #04AA6D;
+      }
+
+      li span{
+        left: -10px;
+      }
+
+      ul li {
+        padding: 5px 0px;
+      }
+
+
+      /* sidebar */      
+      .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #FDEBD0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        margin-top: 45px;
+      }
+
+      .main {
+        margin-left: 250px; /* Same as the width of the sidenav */
+        font-size: 16px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+        margin-top: 45px
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+
+      /* author info */
+      }
+      .author__avatar {
+        display:table-cell;
+        vertical-align:top;
+        width:36px
+      }
+      @media (min-width: 57.8125em) {
+        .author__avatar {
+          display:block;
+          width:auto;
+        }
+      }
+      .author__avatar img {
+        max-width:175px;
+        height: auto;
+        border-radius:50%
+      }
+      @media (min-width: 57.8125em) {
+        .author__avatar img {
+          padding:5px;
+          border:1px solid #f2f3f3
+        }
+      }
+      .author__content {
+        display:table-cell;
+        vertical-align:top;
+        padding-left:15px;
+        padding-right:25px;
+        line-height:1
+      }
+      @media (min-width: 57.8125em) {
+        .author__content {
+          display:block;
+          width:100%;
+          padding-left:0;
+          padding-right:0
+        }
+      }
+      .author__name {
+        text-align: center;
+        margin:0
+      }
+      @media (min-width: 57.8125em) {
+        .author__name {
+          margin-top:10px;
+          margin-bottom:10px
+        }
+      }
+      .sidebar .author__name {
+        font-family: 'Arial';
+        font-size:1em
+      }
+      .author__bio {
+        text-align: center;
+        margin:0
+      }
+      @media (min-width: 57.8125em) {
+        .author__bio {
+          margin-top:10px;
+          margin-bottom:20px
+        }
+      }
+
+      .authr__email {
+        text-align: center;
+        margin:0
+      }
+      @media (min-width: 57.8125em) {
+        .autor__email  {
+          margin-top:10px;
+          margin-bottom:20px
+        }
+      }
+
+      /* Change container */
+      .container {
+        margin-top:45px
+      }
+
+
+      /* Page */
+      .page .page__inner-wrap .page__content, .page .page__inner-wrap .page__meta, .page .page__inner-wrap .comment__date, .page .page__inner-wrap .page__share {
+        clear: both;
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
     </style>
   </head>
   <body>
-    <div id="header">
-      <div id="header-inner"> <img src="imags/icon.png" class="img-circle img-me">
-        <div class="header-text">
-          <div class="header-text-name"> Tse-Shao Chang </div>
-          <div class="header-text-email"> tsechang at umich dot edu</div>
-          <div> <a href="https://github.com/tsechang" target="_blank"><img src="imags/github-icon.png"
-
-                                                                           width="20pt"></a> <a href="https://scholar.google.com/citations?hl=en&amp;user=O1GJ4A8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
-
-                                                                                                target="_blank"><img src="imags/google-scholar-icon.svg" width="20pt"></a>
-          </div>
-        </div>
+    <ul id="ul_nav_bar">
+      <li id="il_nav_bar"><a class="active" href="index.html">Home</a></li>
+      <li id="il_nav_bar"><a href="index.html">Research</a></li>
+      <li id="il_nav_bar"><a href="publications.html">Publications</a></li>
+      <li id="il_nav_bar"><a href="index.html">CV</a></li>
+      <li id="il_nav_bar"><a href="index.html">Blog</a></li>
+    </ul>
+    <div class="sidenav">
+      <div class="author__avatar"> <img src="imags/icon.png"> </div>
+      <div class="author__content">
+        <h3 class="author__name"> Tse-Shao Chang </h3>
+        <p class="authr__bio"> Ph.D. Candidate at Univeristy of Michigan, Ann
+          Arbor </p>
+        <p class="authr__email"> tsechang [at] umich [dot] com <br>
+          <br>
+        </p>
+      </div>
+      <div> <a href="https://github.com/tsechang" target="_blank"><img src="imags/github-icon.png"
+            width="20pt"></a> <a href="https://scholar.google.com/citations?hl=en&amp;user=O1GJ4A8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+          target="_blank"><img src="imags/google-scholar-icon.svg" width="20pt"></a>
       </div>
     </div>
-    <div class="container">
+    <div class="main">
       <div class="col-xs-10 col-md-offset-1">
         <div class="row">
           <div class="row vspace-top"><br>
             <div class="col-xs-9">
               <div>
-                <table style="width: 800px; height: auto;" class="center" border="0">
+                <table style="width: 800px; height: auto;" class="left" border="0">
                   <tbody>
                     <tr>
                       <td style="text-align: left; vertical-align: middle;">
@@ -142,14 +307,72 @@
                         current technologies and make significant advancements
                         in the field. <br>
                         <br>
-                        •&nbsp;&nbsp;&nbsp; Ph.D., Mechanical Engineering,
-                        University of Michigan, Ann Arbor, Advised by <a href="https://sites.google.com/a/umich.edu/wang_lab/principal-investigator"
-
-                                                                         target="_blank">Dr. Thomas Wang</a><br>
-                        •&nbsp;&nbsp;&nbsp; M.S.E., Mechanical Engineering,
-                        University of Michigan, Ann Arbor, 2018<br>
-                        •&nbsp;&nbsp;&nbsp; B.S., Mechanical Engineering,
-                        National Cheng Kung University, Tainan, Taiwan, 2014<br>
+                        <ul style="list-style-type:disc">
+                          <li><span>Ph.D., Mechanical Engineering, University of
+                              Michigan, Ann Arbor, Advised by <a href="https://sites.google.com/a/umich.edu/wang_lab/principal-investigator"
+                                target="_blank">Dr. Thomas Wang</a></span></li>
+                          <li><span>M.S.E., Mechanical Engineering, University
+                              of Michigan, Ann Arbor, 2018</span></li>
+                          <li><span>B.S., Mechanical Engineering, National Cheng
+                              Kung University, Tainan, Taiwan, 2014</span></li>
+                        </ul>
+                        <hr>
+                        <h3>Recent News</h3>
+                        <br>
+                        <ul style="list-style-type:disc">
+                          <li><span><u><b>December 2023</b></u>: Exciting news!
+                              Our research on the Fabry-Perot polymer film
+                              acoustic sensor for photoacoustic endoscopy is now
+                              accepted for publication in Journal of Biomedical
+                              Optics (JBO).</span></li>
+                          <li><span><u><b>November 2023</b></u>: The efforts
+                              have paid off! Our study focusing on a wide field
+                              endoscope for multiplexed fluorescence imaging is
+                              now <a href="https://www.nature.com/articles/s41598-023-45955-x"
+                                target="_blank"> published in Scientic Report!</a></span></li>
+                          <li><span><u><b>October 2023</b></u>: Another
+                              achievement unlocked! I have successfully passed
+                              my Dissertation Proposal Exam (DPE) and have
+                              formed an efficient dissertation committee.</span></li>
+                          <li><span><u><b>September 2023</b></u>: Our research
+                              involving an NIR labeled cMet peptide for early
+                              cancer detection has been <a href="https://www.mdpi.com/2072-6694/15/19/4795"
+                                target="_blank"> published in Cancers!</a></span></li>
+                          <li><span><u><b>June 2023</b></u>: I'm proud to
+                              contribute to the Center for Research on Learning
+                              and Teaching (CRLT)'s Foundational Course
+                              Initiative (FCI), particularly engaging in the
+                              Collaborative Course Design (CCD) team. Tasked
+                              with redesigning ME 240: Introduction to Dynamics
+                              and Vibrations, our aim is to enhance educational
+                              equity and student learning through
+                              student-centered and data-informed strategies.</span></li>
+                          <li><span><u><b>May 2023</b></u>: Highlight - Earned
+                              the esteemed <b>Rackham Professional Development
+                                Diversity, Equity, and Inclusion (DEI)
+                                Certificate</b>, reinforcing my commitment to
+                              creating a diverse and inclusive professional
+                              workspace.</span></li>
+                          <li><span><u><b>April 2023</b></u>: I am thrilled to
+                              announce the successful attainment of my <b>Graduate
+                                Certificate in Computational Discovery and
+                                Engineering</b> - a testament to my expertise in
+                              machine learning, deep learning, and image
+                              processing in the field of biomedical imaging, and
+                              sRNA sequencing analysis.</span></li>
+                          <li><span><u><b>March 2023</b></u>: Our informative
+                              video elaborating the clinical trials of NIR
+                              flexible fiber cholangioscope for evaluating
+                              indeterminant biliary strictures is now <a href="https://www.sciencedirect.com/science/article/pii/S2468448122001953"
+                                target="_blank"> published in VideoGIE!</a></span></li>
+                          <li><span><u><b>January 2023</b></u>: Mark your
+                              calendars! I will be presenting my research on the
+                              topic <b>'Fiber-scanning GRIN-lens-based
+                                photoacoustic endomicroscope for early colon
+                                cancer detection'</b> at SPIE Photonics West,
+                              Photons Plus Ultrasound: Imaging and Sensing 2023,
+                              in San Francisco, CA.</span></li>
+                        </ul>
                       </td>
                     </tr>
                   </tbody>
@@ -157,278 +380,6 @@
               </div>
             </div>
           </div>
-          <br>
-          &nbsp; </div>
-        <div class="row">
-          <div class="row vspace-top"><br>
-            <div class="col-xs-9">
-              <div>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: left; vertical-align: middle;">
-                        <h1> Publications </h1>
-                        <h3> Imaging Instruments </h3>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: center; vertical-align: middle;" width=165px><img
-
-                                                                                               class="paper-image" src="imags/instrument/wide-field.png"></td>
-                      <td style="text-align: left; vertical-align: middle;"><div class=paper-title>Wide-field
-                        endoscope accessory for multiplexed
-                        fluorescence imaging</div>
-                        <div class="paper-authors"> [Gaoming Li, Miki Lee, <u>Tse-Shao Chang</u>],
-                          Joonyoung Yu, Haijun Li, Xiyu Duan, Xiaoli Wu, Sangeeta
-                          Jaiswal, Shuo Feng, Kenn R Oldham, Thomas D Wang <strong
-
-                                                                                   style="color: #3333ff;">(Co-First Author)</strong></div>
-                        Scientific Reports 2023 <br>
-                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10636199/"
-
-                           target="_blank">[PubMed]</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; vertical-align: middle;" width=165px><img
-
-                                                                                               class="paper-image" src="imags/instrument/PA.png"></td>
-                      <td style="text-align: left; vertical-align: middle;"><div class=paper-title>Fiber-scanning 
-                        GRIN-lens-based photoacoustic endomicroscope for early colon cancer detection (Conference Presentation)</div>
-                        <div class=paper-authors><u>Tse-Shao Chang</u>, HaiJun Li, Gaoming Li, Tong Li, Xiaoli Wu, Kenn Oldham, Thomas Wang </div>
-                        SPIE Photonics West, Photons Plus Ultrasound: Imaging and Sensing 2023<br>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td style="text-align: center; vertical-align: middle;" width=165px><img
-
-                                                                                               class="paper-image" src="imags/instrument/spec.png"></td>
-                      <td style="text-align: left; vertical-align: middle;"><div class=paper-title>Dual-axis
-                        confocal configuration for depth sensitive
-                        fluorescence spectroscopy</div>
-                        <div class="paper-authors"> Yongping Lin, <u>Tse-Shao
-                          Chang</u>, Jing Chen, Gaoming Li</div>
-                        <div>Optics Letters 2021</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/34329231/" target="_blank">[PubMed]</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="row vspace-top"><br>
-            <div class="col-xs-9">
-              <div>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: left; vertical-align: middle;">
-                        <h3> Cancer Imaging </h3>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: center; vertical-align: middle; width=165px"><img
-
-                                                                                               class="paper-image" src="imags/icon.png"></td>
-                      <td style="text-align: left; vertical-align: middle;"><div class=paper-title>Near-Infrared
-                        Imaging of Colonic Adenomas In Vivo Using Orthotopic
-                        Human Organoids for Early Cancer Detection </div>
-                        <div class="paper-authors"> Xiaoli Wu, Chun-Wei Chen,
-                          Sangeeta Jaiswal, <u>Tse-Shao Chang</u>, Ruoliu
-                          Zhang, Michael K Dame, Yuting Duan, Hui Jiang, Jason R
-                          Spence, Sen-Yung Hsieh, Thomas D Wang</div>
-                        <div>Cancer 2023</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/37835489/" target="_blank">[PubMed]</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Multi-modal imaging for uptake of peptide
-                        ligand specific for CD44 by hepatocellular carcinoma</div>
-                        <div class="paper-authors">[Xiaoli Wu, Xiaoqing Meng], <u>Tse-Shao
-                          Chang</u>, Shuo Feng, Miki Lee, Sangeeta Jaiswal,
-                          Eun-Young K Choi, Lam Tran, Hui Jiang, Thomas D Wang </div>
-                        <div>Photoacoustics 2022</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/35479192/" target="_blank">[PubMed]</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Multi-modal imaging probe for glypican-3
-                        overexpressed in orthotopic hepatocellular carcinoma</div>
-                        <div class="paper-authors">[Shuo Feng, Xiaoqing Meng,
-                          Zhao Li], <u>Tse-Shao Chang</u>, Xiaoli Wu, Juan
-                          Zhou, Bishnu Joshi, Eun-Young Choi, Lili Zhao, Jiye
-                          Zhu, Thomas D Wang</div>
-                        <div>Journal of medicinal chemistry 2021</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/34590489/" target="_blank">[PubMed]</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Integrated imaging methodology detects
-                        claudin-1 expression in premalignant nonpolypoid and
-                        polypoid colonic epithelium in mice</div>
-                        <div class="paper-authors">Fa Wang, Xiyu Duan, Jing
-                          Chen, Zhenghong Gao, Juan Zhou, Xiaoli Wu, <u>Tse-Shao
-                          Chang</u>, Miki Lee, Gaoming Li, Asma Nusrat, Rork
-                          Kuick, Henry D Appelman, Thomas D Wang
-                        </div>
-                        <div>Clinical and Translational Gastroenterology 2020</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/31922993/" target="_blank">[PubMed]</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Detection of colonic neoplasia in vivo using
-                        near-infrared-labeled peptide targeting cMet</div>
-                        <div class="paper-authors">Xiaoli Wu, Juan Zhou, Fa
-                          Wang, Xiaoqing Meng, Jing Chen, <u>Tse-Shao Chang</u>,
-                          Miki Lee, Gaoming Li, Xue Li, Henry D Appelman, Rork
-                          Kuick, Thomas D Wang
-                        </div>
-                        <div>Scientific Reports 2019</div>
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/31784601/" target="_blank">[PubMed]</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="row vspace-top"><br>
-            <div class="col-xs-9">
-              <div>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: left; vertical-align: middle;">
-                        <h3> Clinical Trials </h3>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/clinical/cholang.png"></td>
-                      <td><div class=paper-title>Flexible fiber cholangioscope for detection
-                        near-infrared fluorescence</div>
-                        <div class="paper-authors"><u>Tse-Shao Chang</u>, Yaxuan
-                          Zhou, Ruoliu Zhang, Richard S. Kwon, Erik J.
-                          Wamsteker, D. Kim Turgeon, Eric J. Seibel, Thomas D.
-                          Wang
-                        </div>
-                        <div>VideoGIE 2023</div>
-                        <div> ClinicalTrials.gov | NCT04304781 | <a href="https://pubmed.ncbi.nlm.nih.gov/36935809/"
-
-                                                                    target="_blank">[PubMed]</a> </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Detection of Barrett’s Neoplasia with
-                        Near-infrared Fluorescent Heterodimeric Peptide</div>
-                        <div class="paper-authors"> Jing Chen, Yang Jiang, <u>Tse-Shao
-                          Chang</u>, Joel H. Rubenstein, Richard S. Kwon, Erik
-                          J. Wamsteker, Anoop Prabhu, Lili Zhao, Henry Appelman,
-                          Scott R. Owens, David G. Beer, Danielle K. Turgeon,
-                          Eric J. Seibel, Thomas D. Wang </div>
-                        <div>Endoscopy 2022</div>
-                        <div> ClinicalTrials.gov | NCT03852576 | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9718637/"
-
-                                                                    target="_blank">[PubMed]</a> </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Confocal Laser Endomicroscope with Distal MEMS
-                        Scanner for Real-Time Histopathology </div>
-                        <div class="paper-authors">[Miki Lee, Gaoming Li],
-                          Haijun Li, Xiyu Duan, Mayur B. Birla, <u>Tse-Shao
-                          Chang</u>, Danielle K.Turgeon, Kenn R. Oldham, and
-                          Thomas D. Wang
-                        </div>
-                        <div>Scientific Reports 2022</div>
-                        <div> ClinicalTrials.gov | NCT03220711 | <a href="https://pubmed.ncbi.nlm.nih.gov/36418439/"
-
-                                                                    target="_blank">[PubMed]</a></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/icon.png"></td>
-                      <td><div class=paper-title>Multiplexed endoscopic imaging of Barrett’s
-                        neoplasia using targeted fluorescent heptapeptides in
-                        a phase 1 proof-of-concept study </div>
-                        <div class="paper-authors"> Jing Chen, Yang Jiang, <u>Tse-Shao
-                          Chang</u>, Bishnu Joshi, Juan Zhou, Joel H
-                          Rubenstein, Erik J Wamsteker, Richard S Kwon, Henry
-                          Appelman, David G Beer, Danielle K Turgeon, Eric J
-                          Seibel, Thomas D Wang<br>
-                        </div>
-                        <div>Gut 2021</div>
-                        <div> ClinicalTrials.gov | NCT03589443 | <a href="https://pubmed.ncbi.nlm.nih.gov/33028666/"
-
-                                                                    target="_blank">[PubMed]</a> </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="row vspace-top"><br>
-            <div class="col-xs-9">
-              <div>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: left; vertical-align: middle;">
-                        <h3> Origami </h3>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table style="width: 800px; height: auto;" class="center" border="0">
-                  <tbody>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/origami/KreMagSim.png"></td>
-                      <td><div class=paper-title>Magneto-origami structures: engineering
-                        multi-stability and dynamics via magnetic-elastic
-                        coupling</div>
-                        <div class="paper-authors"> [Hongbin Fang, <u>Tse-Shao
-                          Chang</u>], KW Wang <strong style="color: #3333ff;">(Co-First
-                          Author)</strong> </div>
-                        <div>Smart Materials and Structures 2019</div>
-                        <a href="https://iopscience.iop.org/article/10.1088/1361-665X/ab524e/meta"
-
-                           target="_blank">[IOPScience]</a></td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center;" width=165px><img class="paper-image" src="imags/origami/MuraMagPtp.png"></td>
-                      <td><div class=paper-title>Controlling Origami Stability Profile Using
-                        Magnets</div>
-                        <div class="paper-authors"> Hongbin Fang, <u>Tse-Shao
-                          Chang</u>, KW Wang </div>
-                        <div>IDETC/CIE 2018</div>
-                        <a href="https://asmedigitalcollection.asme.org/IDETC-CIE/proceedings/IDETC-CIE2018/51814/V05BT07A058/276099"
-
-                           target="_blank">[ASME]</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div><br>
-          </div>
-          <div><br>
-          </div>
-          <div style="text-align: center;">[UPDATE ON 11/18/2023]</div>
         </div>
       </div>
     </div>
